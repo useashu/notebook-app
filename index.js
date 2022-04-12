@@ -15,7 +15,7 @@ app.use("/api/notes",require("./routes/notesroutes"));
  if(process.env.NODE_ENV === "production"){
      app.use(express.static("inotebook/build"));
  };
- 
+
 app.listen(PORT,function(){
-    console.log("server is running at port"+PORT);
+    console.log(`server is running at port${PORT}`);
 });
