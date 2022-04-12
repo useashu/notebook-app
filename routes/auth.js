@@ -36,10 +36,11 @@ let success=false;
         id:user.id
       }
     }
+    const username=user.name;
     const authtoken=jwt.sign(data,process.env.JWT_SECRET);
     res.cookie("jwtoken",authtoken,{exires:new Date(Date.now()+25892000000),httpOnly:true});
     success=true;
-    res.json({success,authtoken});
+    res.json({success,authtoken,username});
   }catch(error){
     console.error(error.message);
     res.status(500).send("Internal Server Error");

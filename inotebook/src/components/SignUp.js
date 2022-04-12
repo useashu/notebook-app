@@ -29,6 +29,7 @@ function SignUp(props) {
         console.log("clicked");
         if(json.success){
             localStorage.setItem('token',json.authtoken);
+            localStorage.setItem('username',json.username);
             history("/");
             props.showalert("Succesfully sign up","success")
         }else{
